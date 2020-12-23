@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgound"
+    android:orientation="vertical"
+    tools:context=".ui.CocktailDetailFragment">
+
+    <ImageView
+        tools:src="@drawable/ic_launcher_foreground"
+        android:id="@+id/imgCocktailDetailPic"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/tvAlcoholicDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        tools:text="No alcoholic"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/tvCocktailDetailName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        tools:text="Cocktail name"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/tvCocktailDetailDescription"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddToFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/teal_200"
+        android:src="@drawable/ic_favorite" />
+
+</LinearLayout>

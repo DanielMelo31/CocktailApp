@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.drunkapp.ui.MainFragment"
+        android:label="Cocktails"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_cocktailDetailFragment"
+            app:destination="@id/cocktailDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cocktailDetailFragment"
+        android:name="com.example.drunkapp.ui.CocktailDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_cokctail_detail" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.drunkapp.ui.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" />
+</navigation>
