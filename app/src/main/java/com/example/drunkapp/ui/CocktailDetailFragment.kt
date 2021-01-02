@@ -61,7 +61,7 @@ class CocktailDetailFragment : Fragment() {
                 )
             )
             Toast.makeText(
-                requireContext(), "Cocktail saved in favorites", Toast.LENGTH_SHORT
+                requireContext(), "Cocktail saved to favorites", Toast.LENGTH_SHORT
             ).show()
         }
 

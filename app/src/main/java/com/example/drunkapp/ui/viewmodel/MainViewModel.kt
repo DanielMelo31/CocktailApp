@@ -1,4 +1,4 @@
-package com.example.drunkapp.ui.viewmodel
+ package com.example.drunkapp.ui.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*

@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.drunkapp.R
 import com.example.drunkapp.base.BaseViewHolder
 import com.example.drunkapp.data.model.Cocktail
+import com.example.drunkapp.databinding.ItemCocktailBinding
 import kotlinx.android.synthetic.main.item_cocktail.view.*
 
 class CocktailAdapter(
@@ -23,9 +24,8 @@ class CocktailAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return CocktailViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.item_cocktail, parent, false)
-        )
+        val layoutBinding = ItemCocktailBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CocktailViewHolder(layoutBinding)
     }
 
     override fun getItemCount(): Int {
@@ -39,12 +39,14 @@ class CocktailAdapter(
         }
     }
 
-    inner class CocktailViewHolder(itemView: View) : BaseViewHolder<Cocktail>(itemView) {
+    inner class CocktailViewHolder(itemView: ItemCocktailBinding) : BaseViewHolder<Cocktail>(itemView.root) {
         override fun bind(item: Cocktail, position: Int) {
-            Glide.with(context).load(item.image).centerCrop().into(itemView.imgCocktailPic)
-            itemView.tvCocktailName.text = item.name
-            itemView.tvCocktailDescription.text = item.description
-            itemView.setOnClickListener { itemClickListener.onCocktailClick(item) }
+            itemView.apply {
+                Glide.with(context).load(item.image).centerCrop().into(imgCocktailPic)
+                tvCocktailName.text = item.name
+                tvCocktailName.text = item.name
+                setOnClickListener { itemClickListener.onCocktailClick(item) }
+            }
         }
     }
 }
